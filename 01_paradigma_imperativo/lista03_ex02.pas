@@ -16,7 +16,7 @@ function Divisao(n1, n2: integer): integer;
                 halt(0);
         end;
 
-        while (n1 > 0) do
+        while (n1 >= n2) do
             begin
                 n1 := n1 - n2;
                 resultado := resultado + 1;

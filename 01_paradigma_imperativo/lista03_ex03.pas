@@ -1,4 +1,4 @@
-Program ex02;
+Program ex03;
 Uses crt;
 
 var
@@ -19,7 +19,6 @@ function Dist(percurso: array of integer): integer;
                         Dist := resultado;
 
                     resultado := resultado + m[percurso[i], percurso[i+1]];
-                    writeln('RESULTADO: ', resultado);
                 end;
     end;
 begin

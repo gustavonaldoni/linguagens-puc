@@ -1,4 +1,4 @@
-Program ex02;
+Program ex04;
 Uses crt;
 
 var
