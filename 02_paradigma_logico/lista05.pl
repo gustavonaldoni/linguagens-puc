@@ -39,8 +39,7 @@ contavogal([A|B], Contador) 	:- not(vogal(A)),
     				
 
 %% EXERCICIO 04 %%
-insere([], X, X).
-insere([X | Y], Z, [X | W]) :- insere(Y, Z, W).
+insere(Elem,Lista,[Elem|Lista]).
 
 extenso(1, um).
 extenso(2, dois).
@@ -53,9 +52,12 @@ extenso(8, oito).
 extenso(9, nove).
 extenso(10, dez).
 
-traduza([X], ListaDestino) 		:- extenso(X, R),
-    							   insere([], [R], ListaDestino1),
-    							   insere([], ListaDestino, ListaDestino1).
+traduza([], []).
+traduza([A|B], L) :- extenso(A, R),
+    				 insere(R, L1, L),
+    			     traduza(B, L1).
+    						
 
-traduza([A|B], ListaDestino) 	:- traduza([A], ListaDestino),
-    							   traduza(B, ListaDestino).
+%% EXERCÍCIO 05 
+duplica([], []).
+duplica([A|B], [A, A|C]) :- duplica(B, C).
